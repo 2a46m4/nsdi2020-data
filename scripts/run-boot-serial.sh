@@ -1,6 +1,6 @@
 #! /bin/sh
 
-ITER=500
+ITER=5
 DIR=../data/test
 CORES=1
 MEM=256

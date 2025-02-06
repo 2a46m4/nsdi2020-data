@@ -11,7 +11,7 @@ RUN apt update && \
         python \
         libc6-dev-i386
 
-RUN git clone git://git.qemu.org/qemu.git && \
+RUN git clone https://github.com/qemu/qemu && \
     cd qemu && \
     git checkout v4.2.0
 

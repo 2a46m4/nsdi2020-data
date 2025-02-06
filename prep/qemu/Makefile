@@ -4,5 +4,5 @@
 	mkdir -p $(@D)
 	docker build -t qemu-static .
 	mkdir -p out
-	docker run --rm -v $(CURDIR)/out:/out qemu-static
+	docker run --rm -v "$(CURDIR)"/out:/out qemu-static
 	cp -r out/* $(@D) 

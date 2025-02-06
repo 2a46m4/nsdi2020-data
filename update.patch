@@ -1,0 +1,37 @@
+diff --git a/prep/img/Makefile b/prep/img/Makefile
+index 7e2b639..7ce36ef 100644
+--- a/prep/img/Makefile
++++ b/prep/img/Makefile
+@@ -17,7 +17,7 @@ TARGETS += ../../img/bench-ssh-vmlinuz
+ TARGETS += ../../img/bench-ssh-disk.img
+ 
+ LK := ../../bin/linuxkit
+-LOOP ?= /dev/loop0
++LOOP ?= /dev/loop21
+ 
+ build: $(TARGETS)
+ 
+diff --git a/prep/linuxkit/Makefile b/prep/linuxkit/Makefile
+index da18cf7..327ab90 100644
+--- a/prep/linuxkit/Makefile
++++ b/prep/linuxkit/Makefile
+@@ -1,6 +1,6 @@
+ # Quick hacky makefile to build linuxkit with docker
+ 
+-URL := https://github.com/linuxkit/linuxkit/releases/download/v0.7/linuxkit-linux-amd64
++URL := https://github.com/linuxkit/linuxkit/releases/download/v1.0.0/linuxkit-linux-amd64
+ 
+ ../../bin/linuxkit:
+        curl -fsSL -o $@ $(URL)
+diff --git a/prep/qemu/Dockerfile b/prep/qemu/Dockerfile
+index 9f7f6f4..51f2c4e 100644
+--- a/prep/qemu/Dockerfile
++++ b/prep/qemu/Dockerfile
+@@ -11,6 +11,6 @@ RUN apt update && \
+         python \
+         libc6-dev-i386
+ 
+-RUN git clone git://git.qemu.org/qemu.git && \
++RUN git clone https://github.com/qemu/qemu && \
+     cd qemu && \
+     git checkout v4.2.0

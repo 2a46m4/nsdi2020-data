@@ -25,7 +25,8 @@ fi
 ## - Avoid "nf_conntrack: table full, dropping packet"
 ## - Avoid "neighbour: arp_cache: neighbor table overflow!"
 ##
-modprobe kvm_intel
+# modprobe kvm_intel
+modprobe kvm_amd
 sysctl -w net.ipv4.conf.all.forwarding=1
 
 sysctl -w net.ipv4.netfilter.ip_conntrack_max=99999999
